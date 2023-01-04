@@ -1,0 +1,40 @@
+version: '3'
+services:
+  qorus:
+    image: public.ecr.aws/qorus/qorus-ce:latest
+    ports:
+    - "8011:8011"
+    environment:
+      OMQ_DB_NAME: postgres
+      OMQ_DB_TYPE: pgsql
+      OMQ_DB_HOST: pg
+      OMQ_DB_USER: postgres
+      OMQ_DB_PASS: omq
+      TZ: Europe/Prague
+    restart: always
+    volumes:
+    - ./qorus-etc:/opt/qorus/etc
+    - ./qorus-log:/opt/qorus/log
+    - ./qorus-user:/opt/qorus/user
+    links:
+    - pg
+    ulimits:
+      nproc:
+        soft: 8192
+        hard: 65536
+      nofile:
+        soft: 8192
+        hard: 32768
+  pg:
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: omq
+      TZ: Europe/Prague
+      PGTZ: Europe/Prague
+    volumes:
+    - ./qorus-postgres-data:/var/lib/postgresql/data
+volumes:
+  qorus-etc:
+  qorus-log:
+  qorus-user:
+  qorus-postgres-data:
