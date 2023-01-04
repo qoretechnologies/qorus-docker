@@ -1,5 +1,6 @@
 See:
-- [docker](docker) for detailed info about Qorus Docker images
+- [qorus-ce](qorus-ce) for detailed info about Docker images for the Community Edition
+- [qorus-ee](qorus-ee) for detailed info about Docker images for the Enterprise Edition
 
 ## Quick Start for Qorus Community Edition in Docker
 ```
