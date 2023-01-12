@@ -22,5 +22,7 @@ the default configuration.
 See either the `qorus-ce` or `qorus-ee` subdirectories for detailed information on Qorus Docker images for the
 Community Edition and the Enterprise Edition, respectively.
 
+Click here for Qore Technologies' [public Docker registry](https://gallery.ecr.aws/qorus).
+
 ---
 **NOTE**: The Qorus Python remote client has been moved to GitHub: https://github.com/qoretechnologies/qorus-remote
