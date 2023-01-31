@@ -9,15 +9,11 @@ cd qorus-docker/qorus-ce
 docker-compose up -d
 ```
 
-Use `qorus-ee` instead of `qorus-ce` above for the Enterprise Edition (requires a license and support agreement from
-Qore Technologies for production use).
+Use `qorus-ee` instead of `qorus-ce` above for the Enterprise Edition (requires a license and support agreement from Qore Technologies for production use).
 
-This will create a PostgreSQL database schema for Qorus, local volumes for persistent data and will start Qorus with
-an HTTPS listener on port 8011 using a self-signed certificate and with RBAC disabled (Enterprise Edition only; the
-Community Edition does not support users and permissions in any case).
+This will create a PostgreSQL database schema for Qorus, local volumes for persistent data and will start Qorus with an HTTPS listener on port 8011 using a self-signed certificate and with RBAC disabled (Enterprise Edition only; the Community Edition does not support users and permissions in any case).
 
-Point your browser to https://localhost:8011 to connect to Qorus; no authentication is required to connect to Qorus in
-the default configuration.
+Point your browser to https://localhost:8011 to connect to Qorus; no authentication is required to connect to Qorus in the default configuration.
 
 See either the `qorus-ce` or `qorus-ee` subdirectories for detailed information on Qorus Docker images for the
 Community Edition and the Enterprise Edition, respectively.

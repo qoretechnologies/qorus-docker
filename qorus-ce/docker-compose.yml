@@ -5,11 +5,16 @@ services:
     ports:
     - "8011:8011"
     environment:
-      OMQ_DB_NAME: postgres
+      OMQ_DB_NAME: omq
       OMQ_DB_TYPE: pgsql
       OMQ_DB_HOST: pg
-      OMQ_DB_USER: postgres
+      OMQ_DB_USER: omq
       OMQ_DB_PASS: omq
+      OMQUSER_DB_NAME: omquser
+      OMQUSER_DB_TYPE: pgsql
+      OMQUSER_DB_HOST: pg
+      OMQUSER_DB_USER: omquser
+      OMQUSER_DB_PASS: omquser
       TZ: Europe/Prague
     restart: always
     volumes:
@@ -33,6 +38,7 @@ services:
       PGTZ: Europe/Prague
     volumes:
     - ./qorus-postgres-data:/var/lib/postgresql/data
+    - ./qorus-postgres-initdb/qorus-setup.sql:/docker-entrypoint-initdb.d/qorus-setup.sql
 volumes:
   qorus-etc:
   qorus-log:
