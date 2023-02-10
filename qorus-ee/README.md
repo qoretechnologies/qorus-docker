@@ -4,13 +4,13 @@
 
  There are four images available, two based on Ubuntu, and two based on Alpine Linux.  Docker images contain a minimal set of packages able to run everything.  All Docker images as of Qorus v5.1+ are multiarch images, supporting amd64 (x86_64) and arm64 (aarch64) processors.
 
-The latest `latest` tag is for version `5.1`.
+The latest `latest` tag is for version `6.0`.
 
 Available images for Qorus Integration Engine(R) Enterprise Edition:
-- `public.ecr.aws/qorus/qorus-ee:latest` (Ubuntu Focal Fossa 20.04 LTS, Java 11, Python 3.8, Oracle Instant Client 21.1, Firebird ODBC drivers)
+- `public.ecr.aws/qorus/qorus-ee:latest` (Ubuntu Jammy Jellyfish 22.04 LTS with Java 17, Python 10, Oracle Instant Client 21.1, Firebird ODBC drivers)
 - `public.ecr.aws/qorus/qorus-ee-go:latest` (`qorus-ee:latest` + `go` and `grpcurl`)
-- `public.ecr.aws/qorus/qorus-ee-alpine:latest` (Alpine Linux 3.15, Java 11, Python 3.9, Oracle Instant Client 21.1)
-- `public.ecr.aws/qorus/qorus-ee-alpine-minimal:latest` (Alpine Linux 3.15, Python 3.9, without Java or Oracle client libraries)
+- `public.ecr.aws/qorus/qorus-ee-alpine:latest` (Alpine Linux 3.17, Java 17, Python 3.10, Oracle Instant Client 21.1)
+- `public.ecr.aws/qorus/qorus-ee-alpine-minimal:latest` (Alpine Linux 3.17, Python 3.10, without Java or Oracle client libraries)
 
 More information here: https://gallery.ecr.aws/qorus
 
@@ -43,6 +43,8 @@ docker-compose up -d
 To check the container state, you can run `docker-compose ps` and to see all the running processes in the containers, you can run `docker-compose top`.
 
 If you want to run additional containers/services or modify any settings, you can simply copy the compose file and edit it appropriately.
+
+The `docker-compose` configuration also creates the `omquser` datasource in the PostgreSQL database at the same time as creating the system schema (in the system `omq` datasource).
 
 ### Linux example
 
