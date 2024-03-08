@@ -96,6 +96,32 @@ docker run --name qorus \
 - Update the value of the `QORUS_ADMIN_PASS` environment variable option above to set a custom admin password (Enterprise Edition only)
 - Update the image name if necessary before starting
 
+### Podman example
+Podman is compatible with Docker, but it runs rootless, and in the container it runs as root, which is mapped to the current user on the host, therefore the same command line can be used with the `QORUS_UID` and `QORUS_GID` environment variables omitted - these environment variables should not be used with podman.
+
+Download and start the Qorus image in a podman container:
+
+```
+podman run --name qorus \
+    --link pg:postgres \
+    --restart always
+    -p 8011:8011 \
+    --ulimit nofile=8192:8192 \
+    --ulimit nproc=8192:8192 \
+    -e OMQ_DB_NAME=postgres \
+    -e OMQ_DB_TYPE=pgsql \
+    -e OMQ_DB_HOST=postgres \
+    -e OMQ_DB_USER=postgres \
+    -e OMQ_DB_PASS=omq \
+    -e TZ=Europe/Prague \
+    -e QORUS_ADMIN_PASS=changeme \
+    -v $HOME/qorus/etc:/opt/qorus/etc \
+    -v $HOME/qorus/log:/opt/qorus/log \
+    -v $HOME/qorus/user:/opt/qorus/user \
+    -d public.ecr.aws/qorus/qorus-ee:latest
+
+**NOTE** Qorus on podman requires Qorus 6.0.14 or better
+
 ## Docker Usage Info
 
 To run a Qorus container in the background, you can run a command similar to the following:
@@ -140,6 +166,8 @@ The `-e` options set up environment variables. The ones related to system DB con
 Likewise, the `-v` options are used for mounting volumes (host filesystem directories) into the container. Mounting them is unnecessary and they can still be accessed easily from the docker data directory.
 
 More info about the database configuration can be seen in the *System DB configuration* section.
+
+**NOTE** Omit the `QORUS_UID` and `QORUS_GID` environment variables with podman
 
 ## Minimal example for testing
 
