@@ -119,6 +119,7 @@ podman run --name qorus \
     -v $HOME/qorus/log:/opt/qorus/log \
     -v $HOME/qorus/user:/opt/qorus/user \
     -d public.ecr.aws/qorus/qorus-ee:latest
+```
 
 **NOTE** Qorus on podman requires Qorus 6.0.14 or better
 
