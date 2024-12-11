@@ -31,7 +31,7 @@ services:
         soft: 8192
         hard: 32768
   pg:
-    image: postgres:15
+    image: postgres:17
     environment:
       POSTGRES_PASSWORD: omq
       TZ: Europe/Prague

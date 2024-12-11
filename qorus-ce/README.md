@@ -32,7 +32,7 @@ The easiest way to start Qorus and its DB in a simple configuration for test and
 docker-compose up
 ```
 
-This will start up the database using `postgres:15` image and also start up a Qorus container that will connect to it as well as persistent volumes for the DB and for Qorus logs, configuration, and user code.
+This will start up the database using `postgres:17` image and also start up a Qorus container that will connect to it as well as persistent volumes for the DB and for Qorus logs, configuration, and user code.
 
 If you want to launch the containers in background, add `-d` option to the command:
 ```
@@ -50,10 +50,10 @@ The `docker-compose` configuration also creates the `omquser` datasource in the 
 First start the DB container.
 
 For dev and evaluation purposes, a single-node, non-clustered database is sufficient; the following
-command will start a PostgreSQL 15 database for Qorus with a persistent volume for the DB files:
+command will start a PostgreSQL 17 database for Qorus with a persistent volume for the DB files:
 
 ```
-docker run --name pg -v $HOME/qorus/postgres-data:/var/lib/postgresql/data -e POSTGRES_PASSWORD=omq -e TZ=Europe/Prague -e PGTZ=Europe/Prague -d postgres:15
+docker run --name pg -v $HOME/qorus/postgres-data:/var/lib/postgresql/data -e POSTGRES_PASSWORD=omq -e TZ=Europe/Prague -e PGTZ=Europe/Prague -d postgres:17
 ```
 
 *NOTE*: Modify the DB password and time zone names appropriately (see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for valid time zone names)
@@ -140,7 +140,7 @@ More info about the database configuration can be seen in the *System DB configu
 ## Minimal example for testing
 
 ```
-docker run --name pg -e POSTGRES_PASSWORD=omq -e TZ=Europe/Prague -e PGTZ=Europe/Prague -d postgres:15
+docker run --name pg -e POSTGRES_PASSWORD=omq -e TZ=Europe/Prague -e PGTZ=Europe/Prague -d postgres:17
 docker run --name qorus --link pg:postgres -p 8011:8011 --ulimit nofile=8192:8192 --ulimit nproc=8192:8192 -e OMQ_DB_NAME=postgres -e OMQ_DB_TYPE=pgsql -e OMQ_DB_HOST=postgres -e OMQ_DB_USER=postgres -e OMQ_DB_PASS=omq -e QORUS_TZ=Europe/Prague -d public.ecr.aws/qorus/qorus-ce:latest
 docker exec -it qorus bash -l
 ```
