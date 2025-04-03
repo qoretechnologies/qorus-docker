@@ -241,6 +241,7 @@ The following are environment variables that you can set when running the Docker
 
 | Variable | Description |
 | --- | --- |
+| `DISABLE_QORUS_TELEMETRY` | if set to `Y` will disable telemetry (Qorus 7+)
 | `FORCE_INIT_STEPS` | will force all init steps to be done |
 | `FORCE_LOAD_SYSTEM_SERVICES` | will force oloading of all system jobs and services from the `$OMQ_DIR/system` directory |
 | `OMQ_DB_NAME` | database name (see `1` below) |
@@ -256,6 +257,7 @@ The following are environment variables that you can set when running the Docker
 | `OMQUSER_DB_USER` | database username (see `2` below) |
 | `OMQUSER_DB_PASS` | database password (see `2` below) |
 | `OMQUSER_DB_ENC` | database encoding, assumed to be `utf8` if omitted (see `2` below) |
+| `OPENAI_API_KEY` | the Open AI API key (Qorus 7+)
 | `QORUS_FORCE_CHECK_SCHEMA` | Force the schema alignment to run; allows for DB downgrades to be performed when starting Qorus
 | `QORUS_GID` | GID under which Qorus will run |
 | `QORUS_UID` | UID under which Qorus will run |
