@@ -258,6 +258,7 @@ The following are environment variables that you can set when running the Docker
 | `OMQUSER_DB_PASS` | database password (see `2` below) |
 | `OMQUSER_DB_ENC` | database encoding, assumed to be `utf8` if omitted (see `2` below) |
 | `OPENAI_API_KEY` | the Open AI API key (Qorus 7+)
+| `QORE_TYPESCRIPT_ACTION_SCRIPTS` | A colon-separated list of JavaScript files containing data provider app-action definitions and code; files must use absolute paths from the server's perspective; for example a file in a persistent local location like `user/apps/my_app/index.js`, the path to use in this environment variable would be `/opt/qorus/user/apps/my_app/index.js` |
 | `QORUS_FORCE_CHECK_SCHEMA` | Force the schema alignment to run; allows for DB downgrades to be performed when starting Qorus
 | `QORUS_GID` | GID under which Qorus will run |
 | `QORUS_UID` | UID under which Qorus will run |
