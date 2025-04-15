@@ -7,10 +7,10 @@
 The latest `latest` tag is for version `6.0`.
 
 Available images for Qorus Integration Engine(R) Enterprise Edition:
-- `public.ecr.aws/qorus/qorus-ee:latest` (Ubuntu Jammy Jellyfish 22.04 LTS with Java 17, Python 3.10, Oracle Instant Client 21.1, Firebird ODBC drivers)
+- `public.ecr.aws/qorus/qorus-ee:latest` (Ubuntu 24.04 LTS with Java 17, Python 3.11, Oracle Instant Client 21.1, Firebird ODBC drivers)
 - `public.ecr.aws/qorus/qorus-ee-go:latest` (`qorus-ee:latest` with Python 3.8 + `go` and `grpcurl`)
-- `public.ecr.aws/qorus/qorus-ee-alpine:latest` (Alpine Linux 3.17, Java 17, Python 3.10, Oracle Instant Client 21.1)
-- `public.ecr.aws/qorus/qorus-ee-alpine-minimal:latest` (Alpine Linux 3.17, Python 3.10, without Java or Oracle client libraries)
+- `public.ecr.aws/qorus/qorus-ee-alpine:latest` (Alpine Linux 3.21, Java 17, Python 3.11, Oracle Instant Client 21.1)
+- `public.ecr.aws/qorus/qorus-ee-alpine-minimal:latest` (Alpine Linux 3.21, Python 3.11, without Java or Oracle client libraries)
 
 More information here: https://gallery.ecr.aws/qorus
 
