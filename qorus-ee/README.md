@@ -4,7 +4,7 @@
 
  There are four images available, two based on Ubuntu, and two based on Alpine Linux.  Docker images contain a minimal set of packages able to run everything.  All Docker images as of Qorus v5.1+ are multiarch images, supporting amd64 (x86_64) and arm64 (aarch64) processors.
 
-The latest `latest` tag is for version `6.0`.
+The latest `latest` tag is for version `7.0.x`.
 
 Available images for Qorus Integration Engine(R) Enterprise Edition:
 - `public.ecr.aws/qorus/qorus-ee:latest` (Ubuntu 24.04 LTS with Java 17, Python 3.11, Oracle Instant Client 21.1, Firebird ODBC drivers)
